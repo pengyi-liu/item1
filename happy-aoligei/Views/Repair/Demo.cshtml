@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Demo</title>
+    <script src="/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="/Scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="/Scripts/axure/axQuery.js"></script>
+    <script src="/Scripts/axure/globals.js"></script>
+    <script src="/Scripts/axutils.js"></script>
+    <script src="/Scripts/axure/annotation.js"></script>
+    <script src="/Scripts/axure/axQuery.std.js"></script>
+    <script src="/Scripts/axure/doc.js"></script>
+    <script src="/Scripts/document.js"></script>
+    <script src="/Scripts/messagecenter.js"></script>
+    <script src="/Scripts/axure/events.js"></script>
+    <script src="/Scripts/axure/recording.js"></script>
+    <script src="/Scripts/axure/action.js"></script>
+    <script src="/Scripts/axure/expr.js"></script>
+    <script src="/Scripts/axure/geometry.js"></script>
+    <script src="/Scripts/axure/flyout.js"></script>
+    <script src="/Scripts/axure/ie.js"></script>
+    <script src="/Scripts/axure/model.js"></script>
+    <script src="/Scripts/axure/repeater.js"></script>
+    <script src="/Scripts/axure/sto.js"></script>
+    <script src="/Scripts/axure/utils.temp.js"></script>
+    <script src="/Scripts/axure/variables.js"></script>
+    <script src="/Scripts/axure/drag.js"></script>
+    <script src="/Scripts/axure/move.js"></script>
+    <script src="/Scripts/axure/visibility.js"></script>
+    <script src="/Scripts/axure/style.js"></script>
+    <script src="/Scripts/axure/adaptive.js"></script>
+    <script src="/Scripts/axure/tree.js"></script>
+    <script src="/Scripts/scripts/axure/init.temp.js"></script>
+    <script src="/Scripts/LoginData.js"></script>
+    <script src="/Scripts/axure/legacy.js"></script>
+    <script src="/Scripts/axure/viewer.js"></script>
+    <script src="/Scripts/axure/math.js"></script>
+
+    <script>
+        /*function func1() {
+            var row, col;
+            $.get("/Repair/Req",
+                {
+                    code: "0"
+                },
+                function (data, status) {
+                    row = Number(data);
+                    //alert(row.toString());
+                    $.get("/Repair/Req", {
+                        code: "1"
+                    }, function (data, status) {
+                        col = Number(data);
+                        //alert(col.toString());
+                        for (var i = 0; i < row; ++i) {
+                            var t = "a" + i.toString();
+                            document.getElementById("table1").innerHTML += "<tr id=\"" + t + "\"</tr>"
+                            for (var j = 0; j < col; ++j) {
+                                func2(i, j);
+                            }
+                        }
+                    });
+                }
+            );
+        }            
+        function func2(i, j) {
+            $.get("/Repair/Req", {
+                 code: "2",
+                 row: i.toString(),
+                 col: j.toString()
+             }, function (data, status) {
+              var k = "a" + i.toString();
+              document.getElementById(k).innerHTML += "<td>" + data + "</td>";
+             });
+        }*/
+    </script>
+    <style>
+        table,table tr th, table tr td 
+        { 
+            border-width:1px;
+            border-style:solid;
+        }
+        table {
+            border-collapse: collapse; 
+            padding:3px;
+        }  
+    </style>
+</head>
+<body>
+    <button id="b1" onclick="func1()">aaa</button>
+    <p id="p1"></p>
+    <table id="table1">
+        <tr>
+            @for (int j = 0; j < ViewBag.col; ++j)
+            {
+                <td>@ViewData[j.ToString()]</td>
+            }
+        </tr>
+        @for(int i=0;i<ViewBag.row;++i)
+        {
+            <tr>
+                @for(int j=0;j<ViewBag.col;++j)
+                {
+                    <td>@ViewData[i.ToString()+","+j.ToString()]</td>
+                }
+            </tr>
+        }
+    </table>
+</body>
+</html>
