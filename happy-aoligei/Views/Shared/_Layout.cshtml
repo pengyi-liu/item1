@@ -1,43 +1,53 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>工具架管理系统</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta name = "apple-mobile-web-app-capable" content = "yes" />
+    <link href = "/Content/jquery-ui-themes.css" type = "text/css" rel = "stylesheet" />
+    <link href = "/Content/axure_rp_page.css" type = "text/css" rel = "stylesheet" />
+    <link href = "/Content/styles.css" type = "text/css" rel = "stylesheet" />
+    <script src="/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="/Scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="/Scripts/axure/axQuery.js"></script>
+    <script src="/Scripts/axure/globals.js"></script>
+    <script src="/Scripts/axutils.js"></script>
+    <script src="/Scripts/axure/annotation.js"></script>
+    <script src="/Scripts/axure/axQuery.std.js"></script>
+    <script src="/Scripts/axure/doc.js"></script>
+    <script src="/Scripts/document.js"></script>
+    <script src="/Scripts/messagecenter.js"></script>
+    <script src="/Scripts/axure/events.js"></script>
+    <script src="/Scripts/axure/recording.js"></script>
+    <script src="/Scripts/axure/action.js"></script>
+    <script src="/Scripts/axure/expr.js"></script>
+    <script src="/Scripts/axure/geometry.js"></script>
+    <script src="/Scripts/axure/flyout.js"></script>
+    <script src="/Scripts/axure/ie.js"></script>
+    <script src="/Scripts/axure/model.js"></script>
+    <script src="/Scripts/axure/repeater.js"></script>
+    <script src="/Scripts/axure/sto.js"></script>
+    <script src="/Scripts/axure/utils.temp.js"></script>
+    <script src="/Scripts/axure/variables.js"></script>
+    <script src="/Scripts/axure/drag.js"></script>
+    <script src="/Scripts/axure/move.js"></script>
+    <script src="/Scripts/axure/visibility.js"></script>
+    <script src="/Scripts/axure/style.js"></script>
+    <script src="/Scripts/axure/adaptive.js"></script>
+    <script src="/Scripts/axure/tree.js"></script>
+    <script src="/Scripts/scripts/axure/init.temp.js"></script>
+    <script src="/Scripts/axure/legacy.js"></script>
+    <script src="/Scripts/axure/viewer.js"></script>
+    <script src="/Scripts/axure/math.js"></script>
+    <script type="text/javascript">
+        $axure.utils.getTransparentGifPath = function () { return '/Content/images/transparent.gif'; };
+        $axure.utils.getOtherPath = function () { return '/Content/Other.html'; };
+        $axure.utils.getReloadPath = function () { return '/Content/reload.html'; };
+    </script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("工具架管理系统", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("主页", "Index", "Home")</li>
-                    <li>@Html.ActionLink("关于", "About", "Home")</li>
-                    <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 工具架管理系统</p>
-        </footer>
-    </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @RenderBody()
 </body>
 </html>
+

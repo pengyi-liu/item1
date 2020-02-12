@@ -8,7 +8,7 @@ namespace happy_aoligei.Controllers
 {
     public class LendController : Controller
     {
-        // GET: Lend
+        //借用控制器
         public ActionResult Apply()
         {
             return View();

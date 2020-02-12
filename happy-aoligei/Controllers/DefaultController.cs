@@ -29,7 +29,7 @@ namespace happy_aoligei.Controllers
         [HttpPost]
         public ActionResult Login(Models.LoginViewModel user, string JumpUrl)
         {
-            Session["username"] = "123";
+            /*Session["username"] = "123";
             MySqlConnection Conn = new MySqlConnection(strConn);
             string strSQL = "select * from users where users.username=@username and users.password=@pwd";
             MySqlCommand cmd = new MySqlCommand(strSQL, Conn);
@@ -68,7 +68,26 @@ namespace happy_aoligei.Controllers
             {
                 Session.Clear();
                 return Content("Error");
+            }*/
+            Session["username"] = "123";
+            if (ModelState.IsValid)
+            {
+                if(user.username=="123"&&user.password=="123")
+                {
+                    Response.Redirect(JumpUrl);
+                    return Content("");
+                }
             }
+            else
+            {
+                Session.Clear();
+                return Content("Login Failed!");
+            }
+            return Content("Error");
+        }
+        public ActionResult Test()
+        {
+            return View();
         }
         public void Log_out()
         {

@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace happy_aoligei.Controllers
 {
-    public class MessageController : Controller
+    public class ScrapController : Controller
     {
-        //信息模块控制器
-        public ActionResult Index()
+        //报废控制器
+        public ActionResult Apply()
         {
             return View();
         }

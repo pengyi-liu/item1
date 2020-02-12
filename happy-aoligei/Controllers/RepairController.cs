@@ -10,8 +10,8 @@ namespace happy_aoligei.Controllers
 {
     public class RepairController : Controller
     {
+        //报修控制器
         private string strConn = "server=10.3.1.12; port=3306; database=hp-aoligei; user=liupengyi; password=mysql123456.;";
-        // GET: Repair
         public ActionResult Apply()
         {
             return View();

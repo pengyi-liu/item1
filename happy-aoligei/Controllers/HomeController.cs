@@ -10,16 +10,17 @@ using MySql.Data.MySqlClient;
 namespace Test.Controllers
 {
     public class HomeController : Controller
-    {
-        
+    {   
+        //主页控制器
         public ActionResult Index()
         {
-            if (Session.Count == 0)
+            if (Session.Count != 0)
                 return View();
             else
             {
                 ViewBag.JumpUrl = "/Home/Index";
-                return View("Login");
+                Response.Redirect("/Login");
+                return Content("");
             }
         }
         public ActionResult UserInf()
@@ -31,7 +32,6 @@ namespace Test.Controllers
                 ViewBag.JumpUrl = "/Home/UserInf";
                 return View("Login");
             }
-        }
-       
+        }  
     }
 }
