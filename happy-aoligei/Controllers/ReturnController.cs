@@ -8,12 +8,20 @@ namespace happy_aoligei.Controllers
 {
     public class ReturnController : Controller
     {
-        // GET: Return
+        //归还控制器
         public ActionResult Apply()
         {
             return View();
         }
         public ActionResult History()
+        {
+            return View();
+        }
+        public ActionResult EnterStore()
+        {
+            return View();
+        }
+        public ActionResult EnterBuffer()
         {
             return View();
         }
